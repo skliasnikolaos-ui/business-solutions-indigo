@@ -6,79 +6,117 @@ export type Service = {
   name: string;
   short: Text;
   body: Text;
-  areas: { el: string; en: string }[];
-  points: Text[];
+  areas: Text[];
+};
+
+export const links = {
+  group: "https://www.indigogroup.com.gr",
+  groupLabel: "www.indigogroup.com.gr",
+  fashion: "https://www.indigojeans.gr",
+  fashionLabel: "indigojeans.gr",
+  tech: "https://www.indigotechnologies.gr",
+  techLabel: "indigotechnologies.gr",
+};
+
+export const positioning = {
+  title: {
+    el: "Ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη.",
+    en: "One point of contact for every business need.",
+  },
+  body: {
+    el: "Η INDIGO είναι Business Solutions Partner. Ο πελάτης συνεργάζεται με έναν συνομιλητή — την INDIGO — για όλες τις επιχειρηματικές του ανάγκες, εκτός από ρούχα και τεχνολογία. Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες για κάθε ανάγκη.",
+    en: "INDIGO is a Business Solutions Partner. The client works with a single counterpart — INDIGO — for all of its business needs, except clothing and technology. INDIGO coordinates the appropriate external specialist partners for each need.",
+  },
 };
 
 export const services: Service[] = [
   {
     slug: "advisory",
     name: "Business Advisory & Operations",
-    short: { el: "Επιχειρηματική καθοδήγηση και οργάνωση λειτουργιών.", en: "Business guidance and operational organisation." },
+    short: { el: "Επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών.", en: "Business advisory and operational organisation." },
     body: {
-      el: "Επιχειρηματική συμβουλευτική και υποστήριξη λειτουργιών: κατανόηση προκλήσεων, σχεδιασμός κατεύθυνσης και βελτίωση οργάνωσης. Κάθε συνεργασία και η διαθεσιμότητα υπηρεσιών υπόκεινται σε επιβεβαίωση.",
-      en: "Business advisory and operational support: understanding challenges, shaping direction and improving organisation. Every engagement and service availability is subject to confirmation.",
+      el: "Επιχειρηματική συμβουλευτική και υποστήριξη λειτουργιών: κατανόηση προκλήσεων, σχεδιασμός κατεύθυνσης και βελτίωση οργάνωσης.",
+      en: "Business advisory and operational support: understanding challenges, shaping direction and improving organisation.",
     },
     areas: [
-      { el: "Επιχειρηματική στρατηγική", en: "Business strategy" },
-      { el: "Οργάνωση λειτουργιών", en: "Operations" },
-      { el: "Διερεύνηση ανάπτυξης", en: "Growth exploration" },
-    ],
-    points: [
-      { el: "Αποτύπωση της σημερινής εικόνας και των προκλήσεων της επιχείρησης.", en: "Mapping the business's current picture and challenges." },
-      { el: "Σχεδιασμός κατεύθυνσης με σαφείς προτεραιότητες.", en: "Shaping direction with clear priorities." },
-      { el: "Βελτίωση ροών εργασίας, ρόλων και οργάνωσης.", en: "Improving workflows, roles and organisation." },
+      { el: "Επιχειρηματική συμβουλευτική", en: "Business advisory" },
+      { el: "Οργάνωση λειτουργιών", en: "Operational organisation" },
+      { el: "Κατεύθυνση και προτεραιότητες", en: "Direction and priorities" },
     ],
   },
   {
     slug: "contracts",
     name: "Contracts",
-    short: { el: "Συνδέοντας ευκαιρίες και επιχειρήσεις.", en: "Connecting opportunities and businesses." },
+    short: { el: "Εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων.", en: "Commercial introductions, intermediation and contract sourcing." },
     body: {
-      el: "Διερευνούμε εμπορικές συστάσεις, αναζήτηση συμβάσεων, διαμεσολάβηση και επιχειρηματική ανάπτυξη, σύμφωνα με την εκάστοτε εφαρμοστέα νομοθεσία. Το αντικείμενο και οι προϋποθέσεις κάθε συνεργασίας επιβεβαιώνονται ξεχωριστά. Κατ' εξαίρεση, νομικές υπηρεσίες παρέχονται μόνο μέσω εξειδικευμένου εξωτερικού συνεργάτη της εταιρείας μας.",
-      en: "We explore commercial introductions, contract sourcing and intermediation, and business development, subject to applicable law. The scope and conditions of each engagement are confirmed individually. As an exception, legal services are provided only through a specialised external partner of our company.",
+      el: "Διερευνούμε εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων, σύμφωνα με την εκάστοτε εφαρμοστέα νομοθεσία. Το αντικείμενο και οι προϋποθέσεις κάθε συνεργασίας επιβεβαιώνονται ξεχωριστά.",
+      en: "We explore commercial introductions, intermediation and contract sourcing, subject to applicable law. The scope and conditions of each engagement are confirmed individually.",
     },
     areas: [
       { el: "Εμπορικές συστάσεις", en: "Commercial introductions" },
-      { el: "Αναζήτηση συμβάσεων & διαμεσολάβηση", en: "Contract sourcing & intermediation" },
-      { el: "Επιχειρηματική ανάπτυξη", en: "Business development" },
+      { el: "Διαμεσολάβηση", en: "Intermediation" },
+      { el: "Αναζήτηση συμβάσεων", en: "Contract sourcing" },
     ],
-    points: [
-      { el: "Σύνδεση με κατάλληλους εμπορικούς εταίρους.", en: "Connecting with suitable commercial partners." },
-      { el: "Εντοπισμός και διερεύνηση ευκαιριών συμβάσεων.", en: "Identifying and exploring contract opportunities." },
-      { el: "Υποστήριξη της διαδικασίας έως τη συμφωνία.", en: "Supporting the process through to agreement." },
+  },
+  {
+    slug: "development",
+    name: "Business Development",
+    short: { el: "Επιχειρηματική ανάπτυξη και διερεύνηση νέων ευκαιριών.", en: "Business development and exploration of new opportunities." },
+    body: {
+      el: "Υποστηρίζουμε την επιχειρηματική ανάπτυξη: διερεύνηση ευκαιριών, νέων συνεργασιών και κατευθύνσεων ανάπτυξης, με τη συμμετοχή κατάλληλων εξωτερικών ειδικών όπου χρειάζεται.",
+      en: "We support business development: exploring opportunities, new partnerships and growth directions, involving appropriate external specialists where needed.",
+    },
+    areas: [
+      { el: "Διερεύνηση ευκαιριών", en: "Opportunity exploration" },
+      { el: "Νέες συνεργασίες", en: "New partnerships" },
+      { el: "Κατευθύνσεις ανάπτυξης", en: "Growth directions" },
     ],
   },
   {
     slug: "solutions",
     name: "Business Solutions",
-    short: { el: "Ολοκληρωμένες επιχειρηματικές λύσεις από έναν συνεργάτη.", en: "Integrated business solutions from one partner." },
+    short: { el: "Οποιαδήποτε άλλη επιχειρηματική ανάγκη, με έναν συνομιλητή.", en: "Any other business need, with one counterpart." },
     body: {
-      el: "Ως Business Solutions Partner, συνδυάζουμε τεχνολογία, υπηρεσίες και επιχειρηματική εμπειρία για να προτείνουμε λύσεις στις ανάγκες κάθε επιχείρησης. Το αντικείμενο, η διαθεσιμότητα και οι όροι κάθε συνεργασίας επιβεβαιώνονται κατόπιν επικοινωνίας.",
-      en: "As a Business Solutions Partner, we combine technology, services and business experience to propose solutions for each company's needs. Scope, availability and terms of every engagement are confirmed through direct discussion.",
+      el: "Για κάθε άλλη επιχειρηματική ανάγκη — εκτός ρούχων και τεχνολογίας — η INDIGO εντοπίζει και συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες, ώστε ο πελάτης να έχει έναν μόνο συνομιλητή.",
+      en: "For any other business need — except clothing and technology — INDIGO identifies and coordinates the appropriate external specialist partners, so the client has a single counterpart.",
     },
     areas: [
-      { el: "Ολοκληρωμένες λύσεις", en: "Integrated solutions" },
       { el: "Ένα σημείο επαφής", en: "Single point of contact" },
-      { el: "Συνδυασμός τομέων", en: "Cross-sector combination" },
-    ],
-    points: [
-      { el: "Μία ομάδα για όλες τις επιχειρηματικές ανάγκες.", en: "One team for every business need." },
-      { el: "Συνδυασμός τεχνολογίας, υπηρεσιών και εμπειρίας.", en: "Technology, services and experience combined." },
-      { el: "Λύσεις προσαρμοσμένες σε κάθε επιχείρηση.", en: "Solutions tailored to each business." },
+      { el: "Συντονισμός ειδικών συνεργατών", en: "Coordination of specialist partners" },
+      { el: "Ενιαία τιμολόγηση από την INDIGO", en: "Single invoicing by INDIGO" },
     ],
   },
 ];
 
-export const activityNotice: Text = {
-  el: "Όλες οι υπηρεσίες αποτελούν πραγματικές δραστηριότητες της INDIGO GROUP, στο εμπόριο και στις υπηρεσίες, που υλοποιούνται είτε απευθείας είτε μέσω εξειδικευμένων συνεργατών. Οι υπηρεσίες παρέχονται σύμφωνα με την ισχύουσα νομοθεσία· κατ' εξαίρεση, νομικές υπηρεσίες παρέχονται μόνο μέσω εξειδικευμένου εξωτερικού συνεργάτη της εταιρείας μας.",
-  en: "All services are genuine INDIGO GROUP activities, in trade and in services, delivered directly or through specialist partners. Services are provided in line with applicable law; as an exception, legal services are provided only through a specialised external partner of our company.",
+export const model: { title: Text; text: Text }[] = [
+  { title: { el: "Ένας συνομιλητής", en: "One counterpart" }, text: { el: "Ο πελάτης μιλά μόνο με την INDIGO για την ανάγκη του.", en: "The client speaks only with INDIGO about its need." } },
+  { title: { el: "Συντονισμός ειδικών", en: "Specialist coordination" }, text: { el: "Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες.", en: "INDIGO coordinates the appropriate external specialist partners." } },
+  { title: { el: "Τιμολόγηση προς INDIGO", en: "Partners invoice INDIGO" }, text: { el: "Οι συνεργάτες τιμολογούν την INDIGO.", en: "The partners invoice INDIGO." } },
+  { title: { el: "Μία χρέωση στον πελάτη", en: "One charge to the client" }, text: { el: "Η INDIGO χρεώνει τον πελάτη.", en: "INDIGO charges the client." } },
+];
+
+export const benefits: { title: Text; text: Text }[] = [
+  { title: { el: "Ένα σημείο επαφής", en: "Single point of contact" }, text: { el: "Ένας συνομιλητής για όλες τις ανάγκες που καλύπτουμε.", en: "One counterpart for every need we cover." } },
+  { title: { el: "Εξοικονόμηση χρόνου", en: "Time savings" }, text: { el: "Δεν χρειάζεται να αναζητάτε και να διαχειρίζεστε μόνοι σας πολλούς συνεργάτες.", en: "No need to find and manage multiple providers yourself." } },
+  { title: { el: "Απλούστερος συντονισμός", en: "Simpler coordination" }, text: { el: "Η INDIGO συντονίζει τους συνεργάτες και σας ενημερώνει.", en: "INDIGO coordinates the partners and keeps you informed." } },
+  { title: { el: "Κατάλληλοι ειδικοί", en: "The right specialists" }, text: { el: "Για κάθε ανάγκη αναζητείται ο κατάλληλος εξωτερικός ειδικός συνεργάτης.", en: "For each need, the appropriate external specialist is sought." } },
+  { title: { el: "Ευελιξία", en: "Flexibility" }, text: { el: "Η συνεργασία προσαρμόζεται στην ανάγκη της κάθε επιχείρησης.", en: "Each engagement adapts to the needs of the business." } },
+];
+
+export const limits: Text = {
+  el: "Το αντικείμενο, η διαθεσιμότητα και οι όροι κάθε συνεργασίας επιβεβαιώνονται κατόπιν επικοινωνίας. Οι υπηρεσίες παρέχονται σύμφωνα με την ισχύουσα νομοθεσία, απευθείας ή μέσω εξειδικευμένων εξωτερικών συνεργατών. Κατ' εξαίρεση, νομικές υπηρεσίες παρέχονται μόνο μέσω εξειδικευμένου εξωτερικού συνεργάτη της εταιρείας μας.",
+  en: "The scope, availability and terms of every engagement are confirmed through direct discussion. Services are provided in line with applicable law, directly or through specialised external partners. As an exception, legal services are provided only through a specialised external partner of our company.",
 };
+
+export const exclusions: { name: string; text: Text; url: string; label: string }[] = [
+  { name: "Fashion", text: { el: "Ρούχα — INDIGO JEANS. Η ηλεκτρονική λιανική πώληση γυναικείων ρούχων γίνεται μόνο στο", en: "Clothing — INDIGO JEANS. Online retail of women's clothing is available only at" }, url: links.fashion, label: links.fashionLabel },
+  { name: "Technology & Software · Cloud & Digital Services", text: { el: "Τα τεχνολογικά θέματα καλύπτονται από το", en: "Technology matters are covered by" }, url: links.tech, label: links.techLabel },
+];
 
 export const nav = [
   { to: "/", el: "Αρχική", en: "Home" },
   { to: "/services", el: "Υπηρεσίες", en: "Services" },
-  { to: "/approach", el: "Προσέγγιση", en: "Approach" },
+  { to: "/approach", el: "Πώς δουλεύουμε", en: "How we work" },
   { to: "/about", el: "Ποιοι είμαστε", en: "About" },
 ] as const;
 
@@ -86,12 +124,4 @@ export const contact = {
   email: "info@indigogroup.com.gr",
   phone: "210 014 0888",
   phoneHref: "+302100140888",
-  groupUrl: "https://indigogroup.com.gr",
 };
-
-export const steps: { title: Text; text: Text }[] = [
-  { title: { el: "Ακούμε", en: "Listen" }, text: { el: "Κατανοούμε την επιχείρηση, τους στόχους και τις προκλήσεις της.", en: "We understand the business, its goals and challenges." } },
-  { title: { el: "Σχεδιάζουμε", en: "Design" }, text: { el: "Προτείνουμε την κατάλληλη λύση και το εύρος της συνεργασίας.", en: "We propose the right solution and engagement scope." } },
-  { title: { el: "Υλοποιούμε", en: "Deliver" }, text: { el: "Υλοποιούμε απευθείας ή μέσω εξειδικευμένων συνεργατών.", en: "We deliver directly or through specialist partners." } },
-  { title: { el: "Στηρίζουμε", en: "Support" }, text: { el: "Παραμένουμε το ένα σημείο επαφής σε όλη τη διαδρομή.", en: "We remain the single point of contact throughout." } },
-];

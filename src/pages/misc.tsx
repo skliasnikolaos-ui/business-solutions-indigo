@@ -1,53 +1,44 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import company from "@/assets/hero-company.jpg";
 import { LLink } from "@/components/link";
-import { ContactBand, PageIntro } from "@/components/blocks";
+import { Benefits, ContactBand, HowItWorks, PageIntro, Scope } from "@/components/blocks";
 import { useLanguage } from "@/i18n";
-import { activityNotice, contact, services, steps } from "@/content";
+import { contact, links, positioning, services } from "@/content";
 
 export function ApproachPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Προσέγγιση", "Approach")} title={t("Ένα σημείο επαφής για κάθε ανάγκη.", "One point of contact for every need.")} description={t("Συνδυάζουμε τεχνολογία, υπηρεσίες και επιχειρηματική εμπειρία, απευθείας ή μέσω εξειδικευμένων συνεργατών.", "We combine technology, services and business experience, directly or through specialist partners.")} />
-      <section className="section">
-        <div className="wrap grid gap-0">
-          {steps.map((s, i) => (
-            <div key={s.title.en} className="grid md:grid-cols-[120px_1fr_1.4fr] gap-4 md:gap-10 py-10 border-t border-border">
-              <span className="eyebrow text-muted-foreground pt-2">0{i + 1}</span>
-              <h2 className="text-3xl font-medium">{t(s.title.el, s.title.en)}</h2>
-              <p className="copy">{t(s.text.el, s.text.en)}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <PageIntro eyebrow={t("Πώς δουλεύουμε", "How we work")} title={t("Ένας συνομιλητής. Οι κατάλληλοι ειδικοί.", "One counterpart. The right specialists.")} description={t("Ο πελάτης έχει έναν συνομιλητή, την INDIGO. Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες, οι συνεργάτες τιμολογούν την INDIGO και η INDIGO χρεώνει τον πελάτη.", "The client has one counterpart, INDIGO. INDIGO coordinates the appropriate external specialist partners, the partners invoice INDIGO and INDIGO charges the client.")} />
+      <HowItWorks />
+      <Benefits />
+      <Scope />
       <ContactBand />
     </>
   );
 }
 
 export function AboutPage() {
-  const { lang, t } = useLanguage();
+  const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Ποιοι είμαστε", "About")} title="BUSINESS SOLUTIONS by INDIGO GROUP" description={t("Ο Business Solutions Partner της INDIGO GROUP.", "The Business Solutions Partner of INDIGO GROUP.")} />
+      <PageIntro eyebrow={t("Ποιοι είμαστε", "About")} title="BUSINESS SOLUTIONS by INDIGO GROUP" description={t("Η INDIGO ως Business Solutions Partner.", "INDIGO as a Business Solutions Partner.")} />
       <section className="section">
         <div className="wrap grid md:grid-cols-[1.2fr_1fr] gap-16 items-start">
           <div>
-            <p className="copy">{t("Η BUSINESS SOLUTIONS by INDIGO GROUP συγκεντρώνει τις επιχειρηματικές υπηρεσίες της INDIGO GROUP: επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και συμβάσεις, καθώς και ολοκληρωμένες λύσεις που συνδυάζουν διαφορετικούς τομείς.", "BUSINESS SOLUTIONS by INDIGO GROUP brings together INDIGO GROUP's business services: business advisory and operations, commercial introductions and contracts, and integrated solutions that combine different sectors.")}</p>
-            <p className="copy mt-6">{t("Στόχος μας είναι κάθε επιχείρηση να έχει έναν αξιόπιστο συνεργάτη, που ακούει, προτείνει και υλοποιεί με υπευθυνότητα.", "Our aim is for every business to have one reliable partner that listens, proposes and delivers responsibly.")}</p>
-            <div className="mt-10 grid gap-0">
-              {services.map((s) => (
-                <LLink key={s.slug} to={`/services/${s.slug}`} className="area-row"><span>{s.name}</span><ArrowUpRight size={18} className="text-muted-foreground" /></LLink>
-              ))}
-            </div>
-            <a href={contact.groupUrl} target="_blank" rel="noreferrer" className="btn btn-outline btn-lg mt-10">{t("Επισκεφθείτε την INDIGO GROUP", "Visit INDIGO GROUP")}<ArrowUpRight /></a>
-            <p className="text-xs text-muted-foreground leading-relaxed mt-10">{activityNotice[lang]}</p>
+            <p className="copy">{t(positioning.body.el, positioning.body.en)}</p>
+            <p className="copy mt-6">{t("Καλύπτουμε επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη, καθώς και κάθε άλλη δραστηριότητα της INDIGO GROUP, εκτός από ρούχα και τεχνολογία.", "We cover business advisory and operations, commercial introductions and intermediation, contract sourcing, business development, and every other INDIGO GROUP activity except clothing and technology.")}</p>
+            <a href={links.group} target="_blank" rel="noreferrer" className="btn btn-outline btn-lg mt-10">{links.groupLabel}<ArrowUpRight /></a>
           </div>
-          <img src={company} alt={t("Εννοιολογική εικόνα επιχειρηματικού χώρου", "Conceptual image of a business space")} className="w-full aspect-[4/5] object-cover" loading="lazy" />
+          <div>
+            <p className="eyebrow mb-7">{t("Υπηρεσίες", "Services")}</p>
+            {services.map((s) => (
+              <LLink key={s.slug} to={`/services/${s.slug}`} className="area-row"><span>{s.name}</span><ArrowUpRight size={18} className="text-muted-foreground" /></LLink>
+            ))}
+          </div>
         </div>
       </section>
+      <Scope compact />
       <ContactBand />
     </>
   );

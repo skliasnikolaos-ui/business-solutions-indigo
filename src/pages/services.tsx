@@ -1,22 +1,18 @@
 import { ArrowUpRight, MoveUpRight } from "lucide-react";
 import { useParams } from "react-router-dom";
 import { LLink } from "@/components/link";
-import { ContactBand, PageIntro, ServiceGrid } from "@/components/blocks";
+import { ContactBand, PageIntro, Scope, ServiceGrid } from "@/components/blocks";
 import { useLanguage } from "@/i18n";
-import { activityNotice, services } from "@/content";
+import { limits, services } from "@/content";
 import { NotFoundPage } from "./misc";
 
 export function ServicesPage() {
-  const { lang, t } = useLanguage();
+  const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Υπηρεσίες", "Services")} title={t("Ολοκληρωμένες επιχειρηματικές λύσεις.", "Integrated business solutions.")} description={t("Business Advisory & Operations, Contracts και Business Solutions — από έναν συνεργάτη.", "Business Advisory & Operations, Contracts and Business Solutions — from one partner.")} />
-      <section className="section">
-        <div className="wrap">
-          <ServiceGrid />
-          <p className="text-xs leading-relaxed text-muted-foreground mt-8 max-w-4xl">{activityNotice[lang]}</p>
-        </div>
-      </section>
+      <PageIntro eyebrow={t("Υπηρεσίες", "Services")} title={t("Ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη.", "One point of contact for every business need.")} description={t("Επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη — και κάθε άλλη επιχειρηματική ανάγκη, εκτός ρούχων και τεχνολογίας.", "Business advisory and operations, commercial introductions and intermediation, contract sourcing, business development — and any other business need, except clothing and technology.")} />
+      <section className="section"><div className="wrap"><ServiceGrid /></div></section>
+      <Scope />
       <ContactBand />
     </>
   );
@@ -38,16 +34,9 @@ export function ServicePage() {
         <div className="wrap grid md:grid-cols-[1.2fr_1fr] gap-16">
           <div>
             <p className="copy">{t(s.body.el, s.body.en)}</p>
-            <ul className="mt-10 grid gap-4">
-              {s.points.map((p) => (
-                <li key={p.en} className="flex gap-4 items-start">
-                  <span className="mt-2.5 h-px w-6 bg-primary shrink-0" />
-                  <span className="leading-relaxed">{t(p.el, p.en)}</span>
-                </li>
-              ))}
-            </ul>
-            <LLink to="/contact" className="btn btn-primary btn-lg mt-10">{t("Ζητήστε συνάντηση", "Request a meeting")}<ArrowUpRight /></LLink>
-            <p className="text-xs text-muted-foreground leading-relaxed mt-10">{activityNotice[lang]}</p>
+            <p className="copy mt-6">{t("Ο πελάτης έχει έναν συνομιλητή, την INDIGO. Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες· οι συνεργάτες τιμολογούν την INDIGO και η INDIGO χρεώνει τον πελάτη.", "The client has one counterpart, INDIGO. INDIGO coordinates the appropriate external specialist partners; the partners invoice INDIGO and INDIGO charges the client.")}</p>
+            <LLink to="/contact" className="btn btn-primary btn-lg mt-10">{t("Επικοινωνία", "Contact us")}<ArrowUpRight /></LLink>
+            <p className="text-xs text-muted-foreground leading-relaxed mt-10">{limits[lang]}</p>
           </div>
           <div>
             <p className="eyebrow mb-7">{t("Τι κάνουμε", "What we do")}</p>

@@ -1,12 +1,12 @@
 # BUSINESS SOLUTIONS by INDIGO GROUP
 
-Αυτόνομο website για τις υπηρεσίες **Business Advisory & Operations**, **Contracts** και **Business Solutions**, στο design της INDIGO GROUP. Δίγλωσσο (EL / EN).
+Αυτόνομο website της INDIGO ως **Business Solutions Partner**: ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη, εκτός ρούχων (indigojeans.gr) και τεχνολογίας (indigotechnologies.gr). Δίγλωσσο (EL / EN).
 
 ## Σελίδες
 - `/` Αρχική
 - `/services` Υπηρεσίες
-- `/services/advisory` · `/services/contracts` · `/services/solutions`
-- `/approach` Προσέγγιση
+- `/services/advisory` · `/services/contracts` · `/services/development` · `/services/solutions`
+- `/approach` Πώς δουλεύουμε (μοντέλο συνεργασίας, οφέλη)
 - `/about` Ποιοι είμαστε
 - `/contact` Επικοινωνία (η φόρμα ανοίγει email προς info@indigogroup.com.gr)
 

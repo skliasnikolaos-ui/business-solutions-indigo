@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
 import { Brand } from "./brand";
 import { LLink, LNavLink } from "./link";
 import { useLanguage } from "@/i18n";
-import { contact, nav, services } from "@/content";
+import { contact, links, nav, services } from "@/content";
 
 function Header() {
   const { lang, setLang, t } = useLanguage();
@@ -59,7 +59,7 @@ function Footer() {
         <div>
           <Brand inverted />
           <p className="mt-6 text-primary-foreground/75 max-w-sm leading-relaxed">
-            {t("Ένας συνεργάτης. Κάθε επιχειρηματική λύση.", "One partner. Every business solution.")}
+            {t("Ένας συνομιλητής για κάθε επιχειρηματική ανάγκη.", "One counterpart for every business need.")}
           </p>
         </div>
         <div>
@@ -72,7 +72,7 @@ function Footer() {
           <p className="eyebrow text-ice mb-5">{t("Η εταιρεία", "Company")}</p>
           <div className="grid gap-3 text-sm">
             {nav.slice(2).map((n) => <LLink key={n.to} to={n.to} className="hover:text-ice">{t(n.el, n.en)}</LLink>)}
-            <a href={contact.groupUrl} target="_blank" rel="noreferrer" className="hover:text-ice inline-flex items-center gap-1.5">INDIGO GROUP <ArrowUpRight size={14} /></a>
+            <a href={links.group} target="_blank" rel="noreferrer" className="hover:text-ice inline-flex items-center gap-1.5">INDIGO GROUP <ArrowUpRight size={14} /></a>
           </div>
         </div>
         <div>
