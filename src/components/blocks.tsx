@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { LLink } from "./link";
 import { Mark } from "./brand";
 import { useLanguage } from "@/i18n";
-import { benefits, exclusions, limits, model, services } from "@/content";
+import { benefits, limits, model, services } from "@/content";
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
@@ -115,23 +115,9 @@ export function Scope({ compact = false }: { compact?: boolean }) {
   const { lang, t } = useLanguage();
   return (
     <section className={compact ? "pb-16" : "section border-t border-border"}>
-      <div className="wrap grid md:grid-cols-2 gap-12">
-        <div>
-          <p className="eyebrow text-muted-foreground mb-5">{t("Τι δεν καλύπτουμε εδώ", "Not covered here")}</p>
-          {exclusions.map((e) => (
-            <div key={e.name} className="py-5 border-t border-border">
-              <p className="font-medium mb-1.5">{e.name}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {t(e.text.el, e.text.en)}{" "}
-                <a href={e.url} target="_blank" rel="noreferrer" className="text-foreground underline underline-offset-4">{e.label}</a>.
-              </p>
-            </div>
-          ))}
-        </div>
-        <div>
-          <p className="eyebrow text-muted-foreground mb-5">{t("Όροι συνεργασίας", "Engagement terms")}</p>
-          <p className="text-sm text-muted-foreground leading-relaxed py-5 border-t border-border">{limits[lang]}</p>
-        </div>
+      <div className="wrap grid md:grid-cols-[1fr_1.6fr] gap-12">
+        <p className="eyebrow text-muted-foreground pt-1">{t("Όροι συνεργασίας", "Engagement terms")}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">{limits[lang]}</p>
       </div>
     </section>
   );

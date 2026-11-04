@@ -44,7 +44,7 @@ export function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
               <p className="eyebrow text-muted-foreground mb-4">{t("Υπηρεσίες που καλύπτουμε", "Services we cover")}</p>
-              <h2 className="section-title max-w-2xl">{t("Όλες οι επιχειρηματικές ανάγκες, εκτός ρούχων και τεχνολογίας.", "Every business need, except clothing and technology.")}</h2>
+              <h2 className="section-title max-w-2xl">{t("Ένας συνεργάτης για τις επιχειρηματικές σας ανάγκες.", "One partner for your business needs.")}</h2>
             </div>
             <LLink to="/services" className="text-sm flex items-center gap-4 shrink-0">{t("Όλες οι υπηρεσίες", "All services")}<ArrowUpRight size={18} /></LLink>
           </div>

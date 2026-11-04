@@ -1,6 +1,6 @@
 # BUSINESS SOLUTIONS by INDIGO GROUP
 
-Αυτόνομο website της INDIGO ως **Business Solutions Partner**: ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη, εκτός ρούχων (indigojeans.gr) και τεχνολογίας (indigotechnologies.gr). Δίγλωσσο (EL / EN).
+Αυτόνομο website της INDIGO ως **Business Solutions Partner**: ένα σημείο επαφής για τις επιχειρηματικές ανάγκες κάθε πελάτη. Δίγλωσσο (EL / EN).
 
 ## Σελίδες
 - `/` Αρχική

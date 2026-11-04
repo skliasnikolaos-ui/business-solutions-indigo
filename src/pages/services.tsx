@@ -10,7 +10,7 @@ export function ServicesPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Υπηρεσίες", "Services")} title={t("Ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη.", "One point of contact for every business need.")} description={t("Επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη — και κάθε άλλη επιχειρηματική ανάγκη, εκτός ρούχων και τεχνολογίας.", "Business advisory and operations, commercial introductions and intermediation, contract sourcing, business development — and any other business need, except clothing and technology.")} />
+      <PageIntro eyebrow={t("Υπηρεσίες", "Services")} title={t("Ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη.", "One point of contact for every business need.")} description={t("Επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη — και κάθε άλλη επιχειρηματική ανάγκη.", "Business advisory and operations, commercial introductions and intermediation, contract sourcing, business development — and any other business need.")} />
       <section className="section"><div className="wrap"><ServiceGrid /></div></section>
       <Scope />
       <ContactBand />

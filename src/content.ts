@@ -12,10 +12,6 @@ export type Service = {
 export const links = {
   group: "https://www.indigogroup.com.gr",
   groupLabel: "www.indigogroup.com.gr",
-  fashion: "https://www.indigojeans.gr",
-  fashionLabel: "indigojeans.gr",
-  tech: "https://www.indigotechnologies.gr",
-  techLabel: "indigotechnologies.gr",
 };
 
 export const positioning = {
@@ -24,8 +20,8 @@ export const positioning = {
     en: "One point of contact for every business need.",
   },
   body: {
-    el: "Η INDIGO είναι Business Solutions Partner. Ο πελάτης συνεργάζεται με έναν συνομιλητή — την INDIGO — για όλες τις επιχειρηματικές του ανάγκες, εκτός από ρούχα και τεχνολογία. Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες για κάθε ανάγκη.",
-    en: "INDIGO is a Business Solutions Partner. The client works with a single counterpart — INDIGO — for all of its business needs, except clothing and technology. INDIGO coordinates the appropriate external specialist partners for each need.",
+    el: "Η INDIGO είναι Business Solutions Partner. Ο πελάτης συνεργάζεται με έναν συνομιλητή — την INDIGO — για τις επιχειρηματικές του ανάγκες. Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες για κάθε ανάγκη.",
+    en: "INDIGO is a Business Solutions Partner. The client works with a single counterpart — INDIGO — for its business needs. INDIGO coordinates the appropriate external specialist partners for each need.",
   },
 };
 
@@ -77,8 +73,8 @@ export const services: Service[] = [
     name: "Business Solutions",
     short: { el: "Οποιαδήποτε άλλη επιχειρηματική ανάγκη, με έναν συνομιλητή.", en: "Any other business need, with one counterpart." },
     body: {
-      el: "Για κάθε άλλη επιχειρηματική ανάγκη — εκτός ρούχων και τεχνολογίας — η INDIGO εντοπίζει και συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες, ώστε ο πελάτης να έχει έναν μόνο συνομιλητή.",
-      en: "For any other business need — except clothing and technology — INDIGO identifies and coordinates the appropriate external specialist partners, so the client has a single counterpart.",
+      el: "Για κάθε άλλη επιχειρηματική ανάγκη, η INDIGO εντοπίζει και συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες, ώστε ο πελάτης να έχει έναν μόνο συνομιλητή.",
+      en: "For any other business need, INDIGO identifies and coordinates the appropriate external specialist partners, so the client has a single counterpart.",
     },
     areas: [
       { el: "Ένα σημείο επαφής", en: "Single point of contact" },
@@ -108,10 +104,6 @@ export const limits: Text = {
   en: "The scope, availability and terms of every engagement are confirmed through direct discussion. Services are provided in line with applicable law, directly or through specialised external partners. As an exception, legal services are provided only through a specialised external partner of our company.",
 };
 
-export const exclusions: { name: string; text: Text; url: string; label: string }[] = [
-  { name: "Fashion", text: { el: "Ρούχα — INDIGO JEANS. Η ηλεκτρονική λιανική πώληση γυναικείων ρούχων γίνεται μόνο στο", en: "Clothing — INDIGO JEANS. Online retail of women's clothing is available only at" }, url: links.fashion, label: links.fashionLabel },
-  { name: "Technology & Software · Cloud & Digital Services", text: { el: "Τα τεχνολογικά θέματα καλύπτονται από το", en: "Technology matters are covered by" }, url: links.tech, label: links.techLabel },
-];
 
 export const nav = [
   { to: "/", el: "Αρχική", en: "Home" },

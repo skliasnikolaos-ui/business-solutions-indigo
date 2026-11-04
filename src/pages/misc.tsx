@@ -27,7 +27,7 @@ export function AboutPage() {
         <div className="wrap grid md:grid-cols-[1.2fr_1fr] gap-16 items-start">
           <div>
             <p className="copy">{t(positioning.body.el, positioning.body.en)}</p>
-            <p className="copy mt-6">{t("Καλύπτουμε επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη, καθώς και κάθε άλλη δραστηριότητα της INDIGO GROUP, εκτός από ρούχα και τεχνολογία.", "We cover business advisory and operations, commercial introductions and intermediation, contract sourcing, business development, and every other INDIGO GROUP activity except clothing and technology.")}</p>
+            <p className="copy mt-6">{t("Καλύπτουμε επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη, καθώς και κάθε άλλη επιχειρηματική ανάγκη.", "We cover business advisory and operations, commercial introductions and intermediation, contract sourcing, business development, and any other business need.")}</p>
             <a href={links.group} target="_blank" rel="noreferrer" className="btn btn-outline btn-lg mt-10">{links.groupLabel}<ArrowUpRight /></a>
           </div>
           <div>
