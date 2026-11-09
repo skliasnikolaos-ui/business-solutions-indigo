@@ -22,7 +22,7 @@ export function AboutPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Ποιοι είμαστε", "About")} title="BUSINESS SOLUTIONS by INDIGO GROUP" description={t("Η INDIGO ως Business Solutions Partner.", "INDIGO as a Business Solutions Partner.")} />
+      <PageIntro eyebrow={t("Ποιοι είμαστε", "About")} title="ISO — INDIGO Strategy & Operations" description={t("Η INDIGO ως Business Solutions Partner.", "INDIGO as a Business Solutions Partner.")} />
       <section className="section">
         <div className="wrap grid md:grid-cols-[1.2fr_1fr] gap-16 items-start">
           <div>
@@ -51,7 +51,7 @@ export function ContactPage() {
 
   function submit(e: FormEvent) {
     e.preventDefault();
-    const subject = `BUSINESS SOLUTIONS — ${form.service || t("Αίτημα επικοινωνίας", "Contact request")}`;
+    const subject = `ISO — ${form.service || t("Αίτημα επικοινωνίας", "Contact request")}`;
     const body = `${t("Όνομα", "Name")}: ${form.name}\n${t("Εταιρεία", "Company")}: ${form.company}\nEmail: ${form.email}\n${t("Υπηρεσία", "Service")}: ${form.service}\n\n${form.message}`;
     window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }

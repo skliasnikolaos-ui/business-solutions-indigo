@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
-import { Brand } from "./brand";
+import { Brand, BRAND_NAME } from "./brand";
 import { LLink, LNavLink } from "./link";
 import { useLanguage } from "@/i18n";
 import { contact, links, nav, services } from "@/content";
@@ -19,7 +19,7 @@ function Header() {
       </a>
       <header className="site-header">
         <div className="wrap h-full flex items-center justify-between gap-5">
-          <LLink to="/" aria-label="BUSINESS SOLUTIONS by INDIGO GROUP"><Brand /></LLink>
+          <LLink to="/" aria-label={BRAND_NAME}><Brand /></LLink>
           <nav className="hidden min-[1101px]:flex items-center gap-7" aria-label={t("Κύρια πλοήγηση", "Main navigation")}>
             {nav.slice(1).map((n) => (
               <LNavLink key={n.to} to={n.to} className={({ isActive }) => `nav-link ${isActive || (n.to === "/services" && pathname.startsWith("/services")) ? "active" : ""}`}>
@@ -84,7 +84,7 @@ function Footer() {
         </div>
       </div>
       <div className="wrap border-t border-primary-foreground/20 py-7 flex flex-wrap justify-between gap-5 text-xs text-primary-foreground/65">
-        <p>© {new Date().getFullYear()} BUSINESS SOLUTIONS by INDIGO GROUP</p>
+        <p>© {new Date().getFullYear()} ISO — INDIGO Strategy &amp; Operations</p>
         <p>{t("Μέλος της INDIGO GROUP", "A member of INDIGO GROUP")}</p>
       </div>
     </footer>

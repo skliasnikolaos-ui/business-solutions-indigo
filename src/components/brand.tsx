@@ -1,25 +1,22 @@
+import logoColor from "@/assets/logo/iso-horizontal-color.svg";
+import logoWhite from "@/assets/logo/iso-horizontal-white.svg";
+
+export const BRAND_NAME = "ISO — INDIGO Strategy & Operations";
+
+/** The ISO mark (three overlapping squares), drawn inline so it scales crisply. */
 export function Mark({ className = "h-10 w-10" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
-      <rect x="4" y="22" width="30" height="30" fill="#b9c3ea" />
-      <rect x="16" y="14" width="30" height="30" fill="#4f5fc4" opacity=".92" />
-      <rect x="28" y="4" width="32" height="32" fill="#1e2a78" />
+    <svg viewBox="4 4 73 73" className={className} aria-hidden="true">
+      <rect x="6" y="38.26" width="36.57" height="36.57" fill="#B7C1F5" />
+      <rect x="22.13" y="22.13" width="36.57" height="36.57" fill="#7F8FE6" />
+      <rect x="38.26" y="6" width="36.57" height="36.57" fill="#3949A8" />
+      <rect x="22.13" y="38.26" width="20.43" height="20.43" fill="#5B6CDD" />
+      <rect x="38.26" y="22.13" width="20.43" height="20.43" fill="#1C2998" />
+      <rect x="38.26" y="38.26" width="4.3" height="4.3" fill="#141F92" />
     </svg>
   );
 }
 
 export function Brand({ inverted = false }: { inverted?: boolean }) {
-  return (
-    <span className="flex items-center gap-3 sm:gap-4">
-      <Mark className="h-9 w-9 sm:h-11 sm:w-11 shrink-0" />
-      <span className="flex flex-col leading-none">
-        <span className={`text-[19px] sm:text-[25px] tracking-[0.04em] ${inverted ? "text-primary-foreground" : "text-primary"}`}>
-          <span className="font-bold">BUSINESS</span> <span className={`font-light ${inverted ? "text-ice" : "text-[#4f5fc4]"}`}>SOLUTIONS</span>
-        </span>
-        <span className={`mt-1.5 text-[9px] sm:text-[10px] tracking-[0.32em] font-medium ${inverted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-          by INDIGO GROUP
-        </span>
-      </span>
-    </span>
-  );
+  return <img src={inverted ? logoWhite : logoColor} alt={BRAND_NAME} className="h-11 sm:h-14 w-auto block" width={267} height={81} />;
 }

@@ -12,8 +12,8 @@ export function HomePage() {
       <section className="hero">
         <img className="hero-image" src={hero} alt="" aria-hidden="true" fetchPriority="high" />
         <div className="wrap hero-inner reveal">
-          <p className="eyebrow text-primary-foreground/75">by INDIGO GROUP</p>
-          <h1>BUSINESS<br />SOLUTIONS<span className="block w-16 h-px bg-ice mt-8" /></h1>
+          <p className="eyebrow text-primary-foreground/75">ISO</p>
+          <h1>INDIGO Strategy<br />&amp; Operations<span className="block w-16 h-px bg-ice mt-8" /></h1>
           <p className="hero-slogan">{t("Ένας συνομιλητής.", "One counterpart.")}<br />{t("Κάθε επιχειρηματική ανάγκη.", "Every business need.")}</p>
           <p className="mt-6 text-sm sm:text-base leading-relaxed text-primary-foreground/80 max-w-md">
             {t("Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες — εσείς έχετε ένα σημείο επαφής.", "INDIGO coordinates the right external specialist partners — you have one point of contact.")}

@@ -1,4 +1,4 @@
-# BUSINESS SOLUTIONS by INDIGO GROUP
+# ISO — INDIGO Strategy & Operations
 
 Αυτόνομο website της INDIGO ως **Business Solutions Partner**: ένα σημείο επαφής για τις επιχειρηματικές ανάγκες κάθε πελάτη. Δίγλωσσο (EL / EN).
 
@@ -23,3 +23,6 @@ npm run dev
 npm run build
 ```
 Ο φάκελος `dist/` ανεβαίνει σε Vercel, Netlify ή οποιοδήποτε static hosting (περιλαμβάνονται `vercel.json` και `public/_redirects`).
+
+## Logo
+Όλες οι εκδοχές του logo (χρωματιστό, λευκό, μονόχρωμο — οριζόντιο και κάθετο, σε SVG και PNG) βρίσκονται στο `public/brand/`.
