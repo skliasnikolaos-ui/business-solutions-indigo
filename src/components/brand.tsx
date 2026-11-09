@@ -18,5 +18,5 @@ export function Mark({ className = "h-10 w-10" }: { className?: string }) {
 }
 
 export function Brand({ inverted = false }: { inverted?: boolean }) {
-  return <img src={inverted ? logoWhite : logoColor} alt={BRAND_NAME} className="h-11 sm:h-14 w-auto block" width={267} height={81} />;
+  return <img src={inverted ? logoWhite : logoColor} alt={BRAND_NAME} className="brand-logo" width={267} height={81} />;
 }

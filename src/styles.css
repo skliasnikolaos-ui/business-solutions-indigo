@@ -41,6 +41,10 @@
 @layer components {
   .wrap { width: min(1280px, calc(100% - 112px)); margin-inline: auto; }
   .site-header { height: 100px; position: sticky; top: 0; z-index: 40; background: var(--background); border-bottom: 1px solid var(--border); }
+  /* Logo width: desktop 185–290px (scales with the screen), mobile 180px, very small mobile 155px. */
+  .brand-logo { display: block; width: clamp(185px, 18vw, 290px); height: auto; max-width: none; }
+  @media (max-width: 640px) { .brand-logo { width: 180px; } }
+  @media (max-width: 380px) { .brand-logo { width: 155px; } }
   .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
   .nav-link { font-size: 13px; padding: 10px 0; position: relative; white-space: nowrap; }
   .nav-link.active::after { content: ""; height: 1px; position: absolute; bottom: 0; left: 0; right: 0; background: var(--primary); }
