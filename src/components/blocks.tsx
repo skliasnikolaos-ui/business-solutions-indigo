@@ -2,7 +2,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { LLink } from "./link";
 import { Mark } from "./brand";
 import { useLanguage } from "@/i18n";
-import { benefits, limits, model, services } from "@/content";
+import { benefits, limits, model, pillars, services } from "@/content";
 
 export function PageIntro({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return (
@@ -19,17 +19,24 @@ export function PageIntro({ eyebrow, title, description }: { eyebrow: string; ti
 export function ServiceGrid() {
   const { t } = useLanguage();
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8">
-      {services.map((s, i) => (
-        <LLink key={s.slug} to={`/services/${s.slug}`} className="service-card group">
-          <span className="eyebrow text-muted-foreground">0{i + 1}</span>
-          <h3>{s.name}</h3>
-          <p className="text-muted-foreground leading-relaxed">{t(s.short.el, s.short.en)}</p>
-          <span className="mt-auto pt-8 flex items-center gap-2 text-sm">
-            {t("Περισσότερα", "Learn more")}
-            <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </span>
-        </LLink>
+    <div className="grid lg:grid-cols-2 gap-x-12 gap-y-14">
+      {pillars.map((p, pi) => (
+        <div key={p.id}>
+          <div className="pb-6">
+            <p className="eyebrow text-muted-foreground">0{pi + 1} / {p.name}</p>
+            <h3 className="text-3xl font-medium mt-4">{t(p.title.el, p.title.en)}</h3>
+            <p className="text-muted-foreground leading-relaxed mt-2 max-w-md">{t(p.text.el, p.text.en)}</p>
+          </div>
+          {services.filter((s) => s.pillar === p.id).map((s) => (
+            <LLink key={s.slug} to={`/services/${s.slug}`} className="service-row group">
+              <span>
+                <span className="block text-xl font-medium">{s.name}</span>
+                <span className="block text-muted-foreground leading-relaxed mt-1.5">{t(s.short.el, s.short.en)}</span>
+              </span>
+              <ArrowUpRight size={18} className="shrink-0 mt-1 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </LLink>
+          ))}
+        </div>
       ))}
     </div>
   );
@@ -60,7 +67,7 @@ export function ModelDiagram() {
     <div className="grid md:grid-cols-[1fr_150px_1.1fr_150px_1fr] items-stretch">
       <Node label={t("Πελάτης", "Client")} sub={t("Ένας συνομιλητής για την ανάγκη του.", "One counterpart for its need.")} />
       <Flow top={t("Ανάγκη", "Need")} bottom={t("Χρέωση INDIGO", "INDIGO charges")} />
-      <Node strong label="INDIGO" sub={t("Business Solutions Partner — συντονίζει τους κατάλληλους συνεργάτες.", "Business Solutions Partner — coordinates the right partners.")} />
+      <Node strong label="INDIGO" sub={t("Strategy & Operations — συντονίζει τους κατάλληλους συνεργάτες.", "Strategy & Operations — coordinates the right partners.")} />
       <Flow top={t("Συντονισμός", "Coordination")} bottom={t("Τιμολόγηση", "Invoicing")} />
       <Node label={t("Εξωτερικοί ειδικοί συνεργάτες", "External specialist partners")} sub={t("Οι κατάλληλοι ειδικοί για κάθε ανάγκη.", "The right specialists for each need.")} />
     </div>

@@ -1,5 +1,5 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import hero from "@/assets/hero-solutions.jpg";
+import hero from "@/assets/hero-iso.jpg";
 import { LLink } from "@/components/link";
 import { Benefits, ContactBand, HowItWorks, Scope, ServiceGrid } from "@/components/blocks";
 import { useLanguage } from "@/i18n";
@@ -14,9 +14,9 @@ export function HomePage() {
         <div className="wrap hero-inner reveal">
           <p className="eyebrow text-primary-foreground/75">ISO</p>
           <h1>INDIGO Strategy<br />&amp; Operations<span className="block w-16 h-px bg-ice mt-8" /></h1>
-          <p className="hero-slogan">{t("Ένας συνομιλητής.", "One counterpart.")}<br />{t("Κάθε επιχειρηματική ανάγκη.", "Every business need.")}</p>
+          <p className="hero-slogan">{t("Στρατηγική και λειτουργίες.", "Strategy and operations.")}<br />{t("Ένας συνομιλητής.", "One counterpart.")}</p>
           <p className="mt-6 text-sm sm:text-base leading-relaxed text-primary-foreground/80 max-w-md">
-            {t("Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες — εσείς έχετε ένα σημείο επαφής.", "INDIGO coordinates the right external specialist partners — you have one point of contact.")}
+            {t("Από την κατεύθυνση της επιχείρησης έως την οργάνωση της υλοποίησης, η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες.", "From setting direction to organising execution, INDIGO coordinates the right external specialist partners.")}
           </p>
           <div className="flex flex-wrap gap-3 mt-9">
             <LLink to="/services" className="btn btn-hero btn-lg">{t("Οι υπηρεσίες μας", "Our services")}<ArrowUpRight /></LLink>
@@ -24,14 +24,14 @@ export function HomePage() {
           </div>
         </div>
         <div className="wrap hero-bottom">
-          <span className="eyebrow text-primary-foreground/70">ADVISORY · OPERATIONS · CONTRACTS · BUSINESS DEVELOPMENT</span>
+          <span className="eyebrow text-primary-foreground/70">STRATEGY · ADVISORY · BUSINESS DEVELOPMENT · OPERATIONS · CONTRACTS</span>
           <a href="#about" aria-label={t("Συνέχεια", "Continue")} className="flex h-10 w-10 border border-primary-foreground/40 items-center justify-center"><ArrowDown size={18} /></a>
         </div>
       </section>
 
       <section id="about" className="section">
         <div className="wrap grid md:grid-cols-[1fr_1.3fr] gap-12 items-start">
-          <p className="eyebrow text-muted-foreground pt-3">Business Solutions Partner</p>
+          <p className="eyebrow text-muted-foreground pt-3">Strategy &amp; Operations</p>
           <div>
             <h2 className="section-title max-w-2xl">{t(positioning.title.el, positioning.title.en)}</h2>
             <p className="copy mt-6">{t(positioning.body.el, positioning.body.en)}</p>
@@ -44,7 +44,7 @@ export function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
               <p className="eyebrow text-muted-foreground mb-4">{t("Υπηρεσίες που καλύπτουμε", "Services we cover")}</p>
-              <h2 className="section-title max-w-2xl">{t("Ένας συνεργάτης για τις επιχειρηματικές σας ανάγκες.", "One partner for your business needs.")}</h2>
+              <h2 className="section-title max-w-2xl">{t("Δύο άξονες. Ένας συνομιλητής.", "Two axes. One counterpart.")}</h2>
             </div>
             <LLink to="/services" className="text-sm flex items-center gap-4 shrink-0">{t("Όλες οι υπηρεσίες", "All services")}<ArrowUpRight size={18} /></LLink>
           </div>

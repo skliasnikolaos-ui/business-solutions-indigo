@@ -59,7 +59,7 @@ function Footer() {
         <div>
           <Brand inverted />
           <p className="mt-6 text-primary-foreground/75 max-w-sm leading-relaxed">
-            {t("Ένας συνομιλητής για κάθε επιχειρηματική ανάγκη.", "One counterpart for every business need.")}
+            {t("Στρατηγική και λειτουργίες. Ένας συνομιλητής.", "Strategy and operations. One counterpart.")}
           </p>
         </div>
         <div>

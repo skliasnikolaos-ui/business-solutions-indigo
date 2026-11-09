@@ -22,12 +22,12 @@ export function AboutPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Ποιοι είμαστε", "About")} title="ISO — INDIGO Strategy & Operations" description={t("Η INDIGO ως Business Solutions Partner.", "INDIGO as a Business Solutions Partner.")} />
+      <PageIntro eyebrow={t("Ποιοι είμαστε", "About")} title="ISO — INDIGO Strategy & Operations" description={t("Ο Business Solutions Partner της INDIGO για στρατηγική και λειτουργίες.", "INDIGO's Business Solutions Partner for strategy and operations.")} />
       <section className="section">
         <div className="wrap grid md:grid-cols-[1.2fr_1fr] gap-16 items-start">
           <div>
             <p className="copy">{t(positioning.body.el, positioning.body.en)}</p>
-            <p className="copy mt-6">{t("Καλύπτουμε επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη, καθώς και κάθε άλλη επιχειρηματική ανάγκη.", "We cover business advisory and operations, commercial introductions and intermediation, contract sourcing, business development, and any other business need.")}</p>
+            <p className="copy mt-6">{t("Στη στρατηγική καλύπτουμε επιχειρηματική συμβουλευτική και επιχειρηματική ανάπτυξη. Στις λειτουργίες καλύπτουμε οργάνωση λειτουργιών, εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων, καθώς και κάθε άλλη επιχειρηματική ανάγκη.", "In strategy, we cover business advisory and business development. In operations, we cover operational organisation, commercial introductions, intermediation and contract sourcing, as well as any other business need.")}</p>
             <a href={links.group} target="_blank" rel="noreferrer" className="btn btn-outline btn-lg mt-10">{links.groupLabel}<ArrowUpRight /></a>
           </div>
           <div>

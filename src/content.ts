@@ -1,8 +1,11 @@
 export type Lang = "el" | "en";
 export type Text = { el: string; en: string };
 
+export type Pillar = "strategy" | "operations";
+
 export type Service = {
   slug: string;
+  pillar: Pillar;
   name: string;
   short: Text;
   body: Text;
@@ -14,48 +17,56 @@ export const links = {
   groupLabel: "www.indigogroup.com.gr",
 };
 
+export const company = {
+  short: "ISO",
+  name: "INDIGO Strategy & Operations",
+};
+
 export const positioning = {
   title: {
-    el: "Ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη.",
-    en: "One point of contact for every business need.",
+    el: "Από τη στρατηγική στην υλοποίηση — με έναν συνομιλητή.",
+    en: "From strategy to execution — with one counterpart.",
   },
   body: {
-    el: "Η INDIGO είναι Business Solutions Partner. Ο πελάτης συνεργάζεται με έναν συνομιλητή — την INDIGO — για τις επιχειρηματικές του ανάγκες. Η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες για κάθε ανάγκη.",
-    en: "INDIGO is a Business Solutions Partner. The client works with a single counterpart — INDIGO — for its business needs. INDIGO coordinates the appropriate external specialist partners for each need.",
+    el: "Η ISO — INDIGO Strategy & Operations είναι ο Business Solutions Partner της INDIGO. Βοηθά τις επιχειρήσεις σε δύο άξονες: στη στρατηγική, δηλαδή στο πού θέλουν να πάνε, και στις λειτουργίες, δηλαδή στο πώς οργανώνεται η υλοποίηση. Ο πελάτης συνεργάζεται με έναν συνομιλητή — την INDIGO — και η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες για κάθε ανάγκη.",
+    en: "ISO — INDIGO Strategy & Operations is INDIGO's Business Solutions Partner. It supports businesses on two axes: strategy, meaning where they want to go, and operations, meaning how execution is organised. The client works with one counterpart — INDIGO — and INDIGO coordinates the appropriate external specialist partners for each need.",
   },
 };
 
+export const pillars: { id: Pillar; name: string; title: Text; text: Text }[] = [
+  {
+    id: "strategy",
+    name: "Strategy",
+    title: { el: "Στρατηγική", en: "Strategy" },
+    text: { el: "Κατανόηση της σημερινής εικόνας, κατεύθυνση και διερεύνηση ανάπτυξης.", en: "Understanding where the business stands, setting direction and exploring growth." },
+  },
+  {
+    id: "operations",
+    name: "Operational Organisation",
+    title: { el: "Λειτουργίες", en: "Operations" },
+    text: { el: "Οργάνωση λειτουργιών, συμβάσεις και συντονισμός των κατάλληλων συνεργατών.", en: "Organising operations, contracts and coordinating the right partners." },
+  },
+];
+
 export const services: Service[] = [
   {
-    slug: "advisory",
-    name: "Business Advisory & Operations",
-    short: { el: "Επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών.", en: "Business advisory and operational organisation." },
+    slug: "strategy",
+    pillar: "strategy",
+    name: "Business Strategy & Advisory",
+    short: { el: "Επιχειρηματική συμβουλευτική και σχεδιασμός κατεύθυνσης.", en: "Business advisory and shaping direction." },
     body: {
-      el: "Επιχειρηματική συμβουλευτική και υποστήριξη λειτουργιών: κατανόηση προκλήσεων, σχεδιασμός κατεύθυνσης και βελτίωση οργάνωσης.",
-      en: "Business advisory and operational support: understanding challenges, shaping direction and improving organisation.",
+      el: "Επιχειρηματική συμβουλευτική: κατανόηση των προκλήσεων της επιχείρησης, σχεδιασμός κατεύθυνσης και καθορισμός προτεραιοτήτων.",
+      en: "Business advisory: understanding the business's challenges, shaping direction and setting priorities.",
     },
     areas: [
       { el: "Επιχειρηματική συμβουλευτική", en: "Business advisory" },
-      { el: "Οργάνωση λειτουργιών", en: "Operational organisation" },
       { el: "Κατεύθυνση και προτεραιότητες", en: "Direction and priorities" },
-    ],
-  },
-  {
-    slug: "contracts",
-    name: "Contracts",
-    short: { el: "Εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων.", en: "Commercial introductions, intermediation and contract sourcing." },
-    body: {
-      el: "Διερευνούμε εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων, σύμφωνα με την εκάστοτε εφαρμοστέα νομοθεσία. Το αντικείμενο και οι προϋποθέσεις κάθε συνεργασίας επιβεβαιώνονται ξεχωριστά.",
-      en: "We explore commercial introductions, intermediation and contract sourcing, subject to applicable law. The scope and conditions of each engagement are confirmed individually.",
-    },
-    areas: [
-      { el: "Εμπορικές συστάσεις", en: "Commercial introductions" },
-      { el: "Διαμεσολάβηση", en: "Intermediation" },
-      { el: "Αναζήτηση συμβάσεων", en: "Contract sourcing" },
+      { el: "Κατανόηση προκλήσεων", en: "Understanding challenges" },
     ],
   },
   {
     slug: "development",
+    pillar: "strategy",
     name: "Business Development",
     short: { el: "Επιχειρηματική ανάπτυξη και διερεύνηση νέων ευκαιριών.", en: "Business development and exploration of new opportunities." },
     body: {
@@ -69,7 +80,38 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "operations",
+    pillar: "operations",
+    name: "Operational Organisation",
+    short: { el: "Οργάνωση και υποστήριξη επιχειρησιακών λειτουργιών.", en: "Organising and supporting business operations." },
+    body: {
+      el: "Υποστήριξη λειτουργιών: βελτίωση οργάνωσης, ροών εργασίας και συντονισμού, ώστε η στρατηγική να μεταφράζεται σε καθημερινή λειτουργία.",
+      en: "Operational support: improving organisation, workflows and coordination, so that strategy translates into day-to-day operations.",
+    },
+    areas: [
+      { el: "Οργάνωση λειτουργιών", en: "Operational organisation" },
+      { el: "Ροές εργασίας", en: "Workflows" },
+      { el: "Συντονισμός", en: "Coordination" },
+    ],
+  },
+  {
+    slug: "contracts",
+    pillar: "operations",
+    name: "Contracts & Intermediation",
+    short: { el: "Εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων.", en: "Commercial introductions, intermediation and contract sourcing." },
+    body: {
+      el: "Διερευνούμε εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων, σύμφωνα με την εκάστοτε εφαρμοστέα νομοθεσία. Το αντικείμενο και οι προϋποθέσεις κάθε συνεργασίας επιβεβαιώνονται ξεχωριστά.",
+      en: "We explore commercial introductions, intermediation and contract sourcing, subject to applicable law. The scope and conditions of each engagement are confirmed individually.",
+    },
+    areas: [
+      { el: "Εμπορικές συστάσεις", en: "Commercial introductions" },
+      { el: "Διαμεσολάβηση", en: "Intermediation" },
+      { el: "Αναζήτηση συμβάσεων", en: "Contract sourcing" },
+    ],
+  },
+  {
     slug: "solutions",
+    pillar: "operations",
     name: "Business Solutions",
     short: { el: "Οποιαδήποτε άλλη επιχειρηματική ανάγκη, με έναν συνομιλητή.", en: "Any other business need, with one counterpart." },
     body: {
@@ -83,6 +125,9 @@ export const services: Service[] = [
     ],
   },
 ];
+
+/** Old URLs kept working after the services were regrouped. */
+export const serviceAliases: Record<string, string> = { advisory: "strategy" };
 
 export const model: { title: Text; text: Text }[] = [
   { title: { el: "Ένας συνομιλητής", en: "One counterpart" }, text: { el: "Ο πελάτης μιλά μόνο με την INDIGO για την ανάγκη του.", en: "The client speaks only with INDIGO about its need." } },

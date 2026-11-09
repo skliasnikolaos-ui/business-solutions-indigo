@@ -77,6 +77,8 @@
   .service-card:hover { background: var(--secondary); padding-left: 18px; }
   .service-card h3 { font-size: 24px; margin: 36px 0 12px; font-weight: 500; }
 
+  .service-row { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; border-top: 1px solid var(--border); transition: background .25s, padding .25s; }
+  .service-row:hover { background: var(--secondary); padding-inline: 16px; }
   .area-row { padding: 22px 0; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 16px; font-size: 19px; transition: color .2s; }
   .area-row:hover { color: var(--ring); }
 
@@ -101,7 +103,9 @@
     .page-title { font-size: 40px; }
     .section-title { font-size: 29px; }
     .copy { font-size: 17px; }
-    .area-row { font-size: 17px; }
+    .service-row { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; border-top: 1px solid var(--border); transition: background .25s, padding .25s; }
+  .service-row:hover { background: var(--secondary); padding-inline: 16px; }
+  .area-row { font-size: 17px; }
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 }

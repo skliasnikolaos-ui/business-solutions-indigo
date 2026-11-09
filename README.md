@@ -5,7 +5,8 @@
 ## Σελίδες
 - `/` Αρχική
 - `/services` Υπηρεσίες
-- `/services/advisory` · `/services/contracts` · `/services/development` · `/services/solutions`
+- Strategy: `/services/strategy` · `/services/development`
+- Operations: `/services/operations` · `/services/contracts` · `/services/solutions`
 - `/approach` Πώς δουλεύουμε (μοντέλο συνεργασίας, οφέλη)
 - `/about` Ποιοι είμαστε
 - `/contact` Επικοινωνία (η φόρμα ανοίγει email προς info@indigogroup.com.gr)

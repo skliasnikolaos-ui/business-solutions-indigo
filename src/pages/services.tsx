@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import { LLink } from "@/components/link";
 import { ContactBand, PageIntro, Scope, ServiceGrid } from "@/components/blocks";
 import { useLanguage } from "@/i18n";
-import { limits, services } from "@/content";
+import { limits, pillars, serviceAliases, services } from "@/content";
 import { NotFoundPage } from "./misc";
 
 export function ServicesPage() {
   const { t } = useLanguage();
   return (
     <>
-      <PageIntro eyebrow={t("Υπηρεσίες", "Services")} title={t("Ένα σημείο επαφής για κάθε επιχειρηματική ανάγκη.", "One point of contact for every business need.")} description={t("Επιχειρηματική συμβουλευτική και οργάνωση λειτουργιών, εμπορικές συστάσεις και διαμεσολάβηση, αναζήτηση συμβάσεων, επιχειρηματική ανάπτυξη — και κάθε άλλη επιχειρηματική ανάγκη.", "Business advisory and operations, commercial introductions and intermediation, contract sourcing, business development — and any other business need.")} />
+      <PageIntro eyebrow={t("Υπηρεσίες", "Services")} title={t("Στρατηγική και λειτουργίες.", "Strategy and operations.")} description={t("Στη στρατηγική: επιχειρηματική συμβουλευτική και ανάπτυξη. Στις λειτουργίες: οργάνωση λειτουργιών, εμπορικές συστάσεις, διαμεσολάβηση και αναζήτηση συμβάσεων — και κάθε άλλη επιχειρηματική ανάγκη, με έναν συνομιλητή.", "In strategy: business advisory and development. In operations: operational organisation, commercial introductions, intermediation and contract sourcing — and any other business need, with one counterpart.")} />
       <section className="section"><div className="wrap"><ServiceGrid /></div></section>
       <Scope />
       <ContactBand />
@@ -21,7 +21,8 @@ export function ServicesPage() {
 export function ServicePage() {
   const { slug } = useParams();
   const { lang, t } = useLanguage();
-  const i = services.findIndex((s) => s.slug === slug);
+  const key = serviceAliases[slug ?? ""] ?? slug;
+  const i = services.findIndex((s) => s.slug === key);
   if (i < 0) return <NotFoundPage />;
   const s = services[i];
   return (
@@ -29,7 +30,7 @@ export function ServicePage() {
       <div className="wrap pt-8 text-xs text-muted-foreground flex items-center gap-3">
         <LLink to="/services" className="hover:text-foreground">{t("Υπηρεσίες", "Services")}</LLink><span>/</span><span>{s.name}</span>
       </div>
-      <PageIntro eyebrow={`0${i + 1} / ${s.name}`} title={s.name} description={t(s.short.el, s.short.en)} />
+      <PageIntro eyebrow={`${pillars.find((p) => p.id === s.pillar)?.name} / ${s.name}`} title={s.name} description={t(s.short.el, s.short.en)} />
       <section className="section">
         <div className="wrap grid md:grid-cols-[1.2fr_1fr] gap-16">
           <div>
