@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Menu, X } from "lucide-react";
 import { Brand, BRAND_NAME } from "./brand";
+import { LogoIntro } from "./intro";
+import { requestLogoIntro } from "@/lib/intro-trigger";
 import { LLink, LNavLink } from "./link";
 import { useLanguage } from "@/i18n";
 import { contact, links, nav, services } from "@/content";
@@ -19,7 +21,7 @@ function Header() {
       </a>
       <header className="site-header">
         <div className="wrap h-full flex items-center justify-between gap-5">
-          <LLink to="/" aria-label={BRAND_NAME}><Brand /></LLink>
+          <LLink to="/" aria-label={BRAND_NAME} onClick={() => requestLogoIntro()}><Brand /></LLink>
           <nav className="hidden min-[1101px]:flex items-center gap-7" aria-label={t("Κύρια πλοήγηση", "Main navigation")}>
             {nav.slice(1).map((n) => (
               <LNavLink key={n.to} to={n.to} className={({ isActive }) => `nav-link ${isActive || (n.to === "/services" && pathname.startsWith("/services")) ? "active" : ""}`}>
@@ -99,6 +101,7 @@ export function Layout() {
       <Header />
       <main id="main" className="flex-1"><Outlet /></main>
       <Footer />
+      <LogoIntro />
     </div>
   );
 }

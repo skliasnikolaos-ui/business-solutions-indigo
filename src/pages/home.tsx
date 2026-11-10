@@ -1,5 +1,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import hero from "@/assets/hero-iso.jpg";
+import heroDesktop from "@/assets/indigo-iso-hero-bg.webp";
+import heroMobile from "@/assets/indigo-iso-hero-mobile.webp";
+import wordmarkWhite from "@/assets/logo/iso-wordmark-white.svg";
 import { LLink } from "@/components/link";
 import { Benefits, ContactBand, HowItWorks, Scope, ServiceGrid } from "@/components/blocks";
 import { useLanguage } from "@/i18n";
@@ -9,22 +11,23 @@ export function HomePage() {
   const { t } = useLanguage();
   return (
     <>
-      <section className="hero">
-        <img className="hero-image" src={hero} alt="" aria-hidden="true" fetchPriority="high" />
+      <section className="hero hero-iso">
+        <picture>
+          <source media="(max-width: 640px)" srcSet={heroMobile} width={1800} height={1752} />
+          <img className="hero-image" src={heroDesktop} width={3072} height={1024} alt="ISO — INDIGO Strategy & Operations" fetchPriority="high" />
+        </picture>
         <div className="wrap hero-inner reveal">
-          <p className="eyebrow text-primary-foreground/75">ISO</p>
-          <h1>INDIGO Strategy<br />&amp; Operations<span className="block w-16 h-px bg-ice mt-8" /></h1>
-          <p className="hero-slogan">{t("Στρατηγική και λειτουργίες.", "Strategy and operations.")}<br />{t("Ένας συνομιλητής.", "One counterpart.")}</p>
-          <p className="mt-6 text-sm sm:text-base leading-relaxed text-primary-foreground/80 max-w-md">
-            {t("Από την κατεύθυνση της επιχείρησης έως την οργάνωση της υλοποίησης, η INDIGO συντονίζει τους κατάλληλους εξωτερικούς ειδικούς συνεργάτες.", "From setting direction to organising execution, INDIGO coordinates the right external specialist partners.")}
-          </p>
-          <div className="flex flex-wrap gap-3 mt-9">
+          <h1 className="max-sm:sr-only">
+            <img src={wordmarkWhite} alt="ISO — INDIGO Strategy & Operations" className="hero-logo" width={179} height={81} />
+          </h1>
+          <span className="hero-rule max-sm:hidden" aria-hidden="true" />
+          <p className="hero-tagline">{t("Στρατηγική και λειτουργίες για επιχειρήσεις.", "Strategy and operations for businesses.")}</p>
+          <div className="flex flex-wrap gap-3 mt-10">
             <LLink to="/services" className="btn btn-hero btn-lg">{t("Οι υπηρεσίες μας", "Our services")}<ArrowUpRight /></LLink>
-            <LLink to="/approach" className="btn btn-lg border border-primary-foreground/50 hover:bg-primary-foreground/10">{t("Πώς δουλεύουμε", "How we work")}</LLink>
+            <LLink to="/contact" className="btn btn-lg border border-primary-foreground/50 hover:bg-primary-foreground/10">{t("Επικοινωνία", "Contact")}</LLink>
           </div>
         </div>
-        <div className="wrap hero-bottom">
-          <span className="eyebrow text-primary-foreground/70">STRATEGY · ADVISORY · BUSINESS DEVELOPMENT · OPERATIONS · CONTRACTS</span>
+        <div className="wrap hero-bottom" style={{ justifyContent: "flex-end" }}>
           <a href="#about" aria-label={t("Συνέχεια", "Continue")} className="flex h-10 w-10 border border-primary-foreground/40 items-center justify-center"><ArrowDown size={18} /></a>
         </div>
       </section>

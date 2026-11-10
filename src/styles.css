@@ -65,6 +65,15 @@
   .hero-inner { position: relative; z-index: 1; padding-top: 84px; padding-bottom: 110px; }
   .hero h1 { font-size: 72px; line-height: 1.04; font-weight: 700; margin: 22px 0; letter-spacing: -.5px; }
   .hero-slogan { font-size: 34px; line-height: 1.4; max-width: 640px; font-weight: 400; }
+  /* ISO hero artwork: dark navy (#030f2e) with the mark on the right; text sits on the empty left side. */
+  .hero-iso { background: #030f2e; }
+  .hero-iso::after { display: none; }
+  .hero-iso .hero-image { object-position: 78% center; }
+  .hero-iso .hero-inner { height: 100%; display: flex; flex-direction: column; justify-content: center; padding-top: 0; padding-bottom: 40px; }
+  .hero-logo { display: block; width: clamp(280px, 30vw, 440px); height: auto; margin: 0; }
+  .hero-iso h1 { margin: 0; font-size: inherit; }
+  .hero-rule { display: block; width: 64px; height: 3px; background: #A9B4F2; margin-top: 30px; }
+  .hero-tagline { margin-top: 26px; font-size: 26px; line-height: 1.4; font-weight: 400; max-width: 560px; color: oklch(.97 .01 260); }
   .hero-bottom { position: absolute; bottom: 30px; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; }
 
   .section { padding-block: 90px; }
@@ -98,14 +107,32 @@
     .hero-slogan { font-size: 25px; }
     .hero::after { background: linear-gradient(90deg, var(--hero-shade), color-mix(in oklch, var(--hero-shade) 45%, transparent)); }
     .hero-bottom { display: none; }
+    /* On phones show the square artwork whole (it carries the ISO name), with the text below it. */
+    .hero-iso { height: auto; min-height: 0; max-height: none; }
+    .hero-iso .hero-image { position: static; height: auto; aspect-ratio: 1800 / 1752; object-fit: contain; object-position: center; }
+    .hero-iso .hero-inner { height: auto; padding-top: 4px; padding-bottom: 52px; }
+    .hero-tagline { margin-top: 0; font-size: 22px; text-align: center; margin-inline: auto; }
+    .hero-iso .hero-inner > .flex { justify-content: center; margin-top: 28px; }
     .section { padding-block: 56px; }
     .page-intro { padding: 44px 0; }
     .page-title { font-size: 40px; }
     .section-title { font-size: 29px; }
     .copy { font-size: 17px; }
-    .service-row { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0; border-top: 1px solid var(--border); transition: background .25s, padding .25s; }
-  .service-row:hover { background: var(--secondary); padding-inline: 16px; }
-  .area-row { font-size: 17px; }
+    .area-row { font-size: 17px; }
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 }
+
+/* Logo intro — globe spin (same motion as the INDIGO GROUP site) */
+.logo-intro{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;background:radial-gradient(circle at 50% 45%,color-mix(in oklab,#B7C1F5 40%,var(--background)) 0%,var(--background) 72%);color:var(--primary);transition:opacity .7s ease;cursor:pointer}
+.logo-intro.is-leaving{opacity:0;pointer-events:none}
+.logo-intro-globe{position:relative;width:min(33vw,168px);aspect-ratio:1;perspective:900px;display:grid;place-items:center}
+.logo-intro-mark{width:100%;height:100%;transform-style:preserve-3d;animation:intro-spin 2.4s cubic-bezier(.45,.05,.3,1) both;filter:drop-shadow(0 10px 24px color-mix(in oklab,#1C2998 30%,transparent))}
+.logo-intro-orbit{position:absolute;inset:-8%;border-radius:50%;border:1px solid color-mix(in oklab,#3949A8 35%,transparent);transform:rotateX(72deg);animation:intro-orbit 2.4s ease-out both}
+.logo-intro-orbit--b{transform:rotateY(72deg);animation-delay:.15s}
+.logo-intro-word{width:clamp(12rem,22vw,22rem);margin:0;animation:intro-word 1s .9s ease-out both}
+.logo-intro-word img{display:block;width:100%;height:auto}
+@keyframes intro-spin{0%{transform:rotateY(-540deg) scale(.4);opacity:0}25%{opacity:1}100%{transform:rotateY(0) scale(1);opacity:1}}
+@keyframes intro-orbit{0%{opacity:0;scale:.5}100%{opacity:1;scale:1}}
+@keyframes intro-word{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.logo-intro-mark,.logo-intro-orbit,.logo-intro-word{animation:none}}
