@@ -38,8 +38,6 @@ export function LogoIntro() {
   return (
     <div className={`logo-intro ${phase === "leave" ? "is-leaving" : ""}`} aria-hidden="true" onClick={() => setPhase("leave")}>
       <div className="logo-intro-globe">
-        <span className="logo-intro-orbit" />
-        <span className="logo-intro-orbit logo-intro-orbit--b" />
         <Mark className="logo-intro-mark" />
       </div>
       <p className="logo-intro-word"><img src={wordmark} alt="" /></p>
