@@ -21,7 +21,7 @@ export function HomePage() {
             <img src={wordmarkWhite} alt="ISO — INDIGO Strategy & Operations" className="hero-logo" width={179} height={81} />
           </h1>
           <span className="hero-rule max-sm:hidden" aria-hidden="true" />
-          <p className="hero-tagline">{t("Στρατηγική και λειτουργίες για επιχειρήσεις.", "Strategy and operations for businesses.")}</p>
+          <p className="hero-tagline">{t("Συμβουλευτική, στρατηγική και λειτουργίες για επιχειρήσεις.", "Advisory, strategy and operations for businesses.")}</p>
           <div className="flex flex-wrap gap-3 mt-10">
             <LLink to="/services" className="btn btn-hero btn-lg">{t("Οι υπηρεσίες μας", "Our services")}<ArrowUpRight /></LLink>
             <LLink to="/contact" className="btn btn-lg border border-primary-foreground/50 hover:bg-primary-foreground/10">{t("Επικοινωνία", "Contact")}</LLink>
