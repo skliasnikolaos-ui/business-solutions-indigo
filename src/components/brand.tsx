@@ -1,5 +1,6 @@
 import logoColor from "@/assets/logo/iso-horizontal-color.svg";
-import logoWhite from "@/assets/logo/iso-horizontal-white.svg";
+// On dark backgrounds: same coloured squares, white "ISO" and lavender subtitle.
+import logoOnDark from "@/assets/logo/iso-horizontal-color-on-dark.svg";
 
 export const BRAND_NAME = "ISO — INDIGO Strategy & Operations";
 
@@ -18,5 +19,5 @@ export function Mark({ className = "h-10 w-10" }: { className?: string }) {
 }
 
 export function Brand({ inverted = false }: { inverted?: boolean }) {
-  return <img src={inverted ? logoWhite : logoColor} alt={BRAND_NAME} className="brand-logo" width={267} height={81} />;
+  return <img src={inverted ? logoOnDark : logoColor} alt={BRAND_NAME} className="brand-logo" width={267} height={81} />;
 }

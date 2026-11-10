@@ -56,7 +56,7 @@ function Header() {
 function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="site-footer text-primary-foreground">
       <div className="wrap py-16 grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-12">
         <div>
           <Brand inverted />

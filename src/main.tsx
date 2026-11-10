@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+// Manrope is bundled with the site (no request to Google Fonts).
+import "@fontsource-variable/manrope";
 import "./styles.css";
 import { LanguageProvider } from "./i18n";
 import { Layout } from "./components/layout";
