@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Smartphone, User } from "lucide-react";
 import { LLink } from "@/components/link";
 import { Benefits, ContactBand, HowItWorks, PageIntro, Scope } from "@/components/blocks";
 import { useLanguage } from "@/i18n";
@@ -64,7 +64,9 @@ export function ContactPage() {
           <div className="grid gap-8 content-start">
             <a href={`mailto:${contact.email}`} className="flex gap-4 items-start"><Mail size={20} className="mt-1" /><span><span className="eyebrow text-muted-foreground block mb-2">Email</span>{contact.email}</span></a>
             <a href={`tel:${contact.phoneHref}`} className="flex gap-4 items-start"><Phone size={20} className="mt-1" /><span><span className="eyebrow text-muted-foreground block mb-2">{t("Τηλέφωνο", "Phone")}</span>{contact.phone}</span></a>
-            <div className="flex gap-4 items-start"><MapPin size={20} className="mt-1" /><span><span className="eyebrow text-muted-foreground block mb-2">{t("Έδρα", "Location")}</span>{t("Γλυφάδα, Ελλάδα", "Glyfada, Greece")}</span></div>
+            <a href={`tel:${contact.mobileHref}`} className="flex gap-4 items-start"><Smartphone size={20} className="mt-1" /><span><span className="eyebrow text-muted-foreground block mb-2">{t("Κινητό", "Mobile")}</span>{contact.mobile}</span></a>
+            <a href={contact.mapUrl} target="_blank" rel="noreferrer" className="flex gap-4 items-start"><MapPin size={20} className="mt-1 shrink-0" /><span><span className="eyebrow text-muted-foreground block mb-2">{t("Διεύθυνση", "Address")}</span>{t(contact.address.el, contact.address.en)}</span></a>
+            <div className="flex gap-4 items-start"><User size={20} className="mt-1" /><span><span className="eyebrow text-muted-foreground block mb-2">{t("Υπεύθυνος επικοινωνίας", "Contact person")}</span>{t(contact.person, contact.personEn)}<span className="block text-sm text-muted-foreground mt-1">{contact.role}</span></span></div>
           </div>
           <form onSubmit={submit} className="grid sm:grid-cols-2 gap-5">
             <label className="text-sm">{t("Ονοματεπώνυμο", "Full name")}<input required className="field" value={form.name} onChange={set("name")} autoComplete="name" /></label>

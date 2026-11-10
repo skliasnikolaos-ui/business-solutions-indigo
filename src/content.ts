@@ -157,8 +157,16 @@ export const nav = [
   { to: "/about", el: "Ποιοι είμαστε", en: "About" },
 ] as const;
 
+/** Contact details, as on the ISO business card. */
 export const contact = {
-  email: "info@indigogroup.com.gr",
+  person: "Νικόλαος Σκλίας",
+  personEn: "Nikolaos Sklias",
+  role: "Founder & CEO",
+  email: "info@indigotechnologies.gr",
   phone: "210 014 0888",
   phoneHref: "+302100140888",
+  mobile: "697 023 1300",
+  mobileHref: "+306970231300",
+  address: { el: "Λεωφ. Δημ. Αγγέλου Μεταξά 27–29, 166\u00a074 Γλυφάδα", en: "27–29 Dim. Angelou Metaxa Ave, 166\u00a074 Glyfada, Greece" },
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Λεωφόρος Δημητρίου Αγγέλου Μεταξά 27, Γλυφάδα 166 74"),
 };

@@ -80,8 +80,9 @@ function Footer() {
         <div>
           <p className="eyebrow text-ice mb-5">{t("Ας μιλήσουμε", "Let's connect")}</p>
           <a className="block mb-4 text-sm" href={`mailto:${contact.email}`}>{contact.email}</a>
-          <a className="block text-sm mb-4" href={`tel:${contact.phoneHref}`}>{contact.phone}</a>
-          <span className="text-sm text-primary-foreground/70">{t("Γλυφάδα, Ελλάδα", "Glyfada, Greece")}</span>
+          <a className="block text-sm mb-2" href={`tel:${contact.phoneHref}`}>{contact.phone}</a>
+          <a className="block text-sm mb-4" href={`tel:${contact.mobileHref}`}>{contact.mobile}</a>
+          <a className="block text-sm text-primary-foreground/70 leading-relaxed hover:text-ice" href={contact.mapUrl} target="_blank" rel="noreferrer">{t(contact.address.el, contact.address.en)}</a>
           <LLink to="/contact" className="flex items-center gap-3 mt-5 text-sm">{t("Επικοινωνία", "Contact")}<ArrowRight size={16} /></LLink>
         </div>
       </div>

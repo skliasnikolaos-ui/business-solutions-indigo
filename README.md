@@ -26,4 +26,4 @@ npm run build
 Ο φάκελος `dist/` ανεβαίνει σε Vercel, Netlify ή οποιοδήποτε static hosting (περιλαμβάνονται `vercel.json` και `public/_redirects`).
 
 ## Logo
-Όλες οι εκδοχές του logo (χρωματιστό, λευκό, μονόχρωμο — οριζόντιο και κάθετο, σε SVG και PNG) βρίσκονται στο `public/brand/`.
+Η τελική ταυτότητα ISO (logo «I | S | O» σε χρωματιστή, λευκή και μονόχρωμη εκδοχή — οριζόντια και κάθετη, SVG και PNG — και οι εικόνες hero) βρίσκεται στο `public/brand/`. Τα στοιχεία επικοινωνίας είναι στο `src/content.ts` (`contact`).

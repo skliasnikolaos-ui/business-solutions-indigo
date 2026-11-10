@@ -13,12 +13,12 @@ export function HomePage() {
     <>
       <section className="hero hero-iso">
         <picture>
-          <source media="(max-width: 640px)" srcSet={heroMobile} width={1800} height={1752} />
+          <source media="(max-width: 640px)" srcSet={heroMobile} width={1800} height={1646} />
           <img className="hero-image" src={heroDesktop} width={3072} height={1024} alt="ISO — INDIGO Strategy & Operations" fetchPriority="high" />
         </picture>
         <div className="wrap hero-inner reveal">
           <h1 className="max-sm:sr-only">
-            <img src={wordmarkWhite} alt="ISO — INDIGO Strategy & Operations" className="hero-logo" width={179} height={81} />
+            <img src={wordmarkWhite} alt="ISO — INDIGO Strategy & Operations" className="hero-logo" width={184} height={68} />
           </h1>
           <span className="hero-rule max-sm:hidden" aria-hidden="true" />
           <p className="hero-tagline">{t("Συμβουλευτική, στρατηγική και λειτουργίες για επιχειρήσεις.", "Advisory, strategy and operations for businesses.")}</p>

@@ -111,7 +111,7 @@
     .hero-bottom { display: none; }
     /* On phones show the square artwork whole (it carries the ISO name), with the text below it. */
     .hero-iso { height: auto; min-height: 0; max-height: none; }
-    .hero-iso .hero-image { position: static; height: auto; aspect-ratio: 1800 / 1752; object-fit: contain; object-position: center; }
+    .hero-iso .hero-image { position: static; height: auto; aspect-ratio: 1800 / 1646; object-fit: contain; object-position: center; }
     .hero-iso .hero-inner { height: auto; padding-top: 4px; padding-bottom: 52px; }
     .hero-tagline { margin-top: 0; font-size: 22px; text-align: center; margin-inline: auto; }
     .hero-iso .hero-inner > .flex { justify-content: center; margin-top: 28px; }
