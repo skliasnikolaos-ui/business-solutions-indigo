@@ -7,6 +7,7 @@ import { requestLogoIntro } from "@/lib/intro-trigger";
 import { LLink, LNavLink } from "./link";
 import { useLanguage } from "@/i18n";
 import { contact, links, nav, services } from "@/content";
+import { useSeo } from "@/seo";
 
 function Header() {
   const { lang, setLang, t } = useLanguage();
@@ -97,6 +98,7 @@ function Footer() {
 export function Layout() {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useSeo();
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

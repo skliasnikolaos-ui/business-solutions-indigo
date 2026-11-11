@@ -1,0 +1,53 @@
+# Builds the site and uploads it to Hetzner (www.i-s-o.gr) on every push to main.
+# It only uploads once these repository secrets exist (Settings → Secrets and variables → Actions):
+#   HETZNER_HOST      e.g. www123.your-server.de (Webhosting) or the server IP (Cloud)
+#   HETZNER_USER      the SSH / FTP user
+#   HETZNER_PORT      222 for Hetzner Webhosting, 22 for a Cloud server
+#   HETZNER_PATH      the web folder, e.g. public_html (Webhosting) or /var/www/i-s-o.gr (Cloud)
+#   HETZNER_SSH_KEY   a private SSH key whose public key is added on the Hetzner side
+# Until then it only builds, so a broken build is still caught.
+name: Build & deploy to Hetzner
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hetzner
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-24.04
+    env:
+      HAS_TARGET: ${{ secrets.HETZNER_SSH_KEY != '' && secrets.HETZNER_HOST != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      - name: Upload to Hetzner
+        if: env.HAS_TARGET == 'true'
+        env:
+          HOST: ${{ secrets.HETZNER_HOST }}
+          USER: ${{ secrets.HETZNER_USER }}
+          PORT: ${{ secrets.HETZNER_PORT || '22' }}
+          TARGET: ${{ secrets.HETZNER_PATH }}
+          KEY: ${{ secrets.HETZNER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_deploy && chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -p "$PORT" -H "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          # No --delete: files already on the server that are not part of the site are left alone.
+          rsync -rlz --chmod=D755,F644 -e "ssh -i ~/.ssh/id_deploy -p $PORT" dist/ "$USER@$HOST:${TARGET%/}/"
+          rm -f ~/.ssh/id_deploy
+
+      - name: No Hetzner secrets yet
+        if: env.HAS_TARGET != 'true'
+        run: echo "Build OK. Add the HETZNER_* secrets to upload automatically to www.i-s-o.gr."
